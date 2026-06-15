@@ -64,6 +64,7 @@ This configuration relies entirely on **Bridge Devices**. A bridge is a single p
 - A single radio chip cannot physically choose two different hopping sequences at the exact same microsecond. Therefore, a bridge device works by **time-multiplexing (time-sharing)**:
     1. For a few time slots, the bridge adjusts its clock to match *Piconet A* and acts as a client, receiving data from Piconet A's Main device.
     2. Then instantly caches that data, hops its radio clock over to match *Piconet B*, and transmits the data to Piconet B.
+
 - A device can **never** be the Main device for two different piconets. If it tried, both piconets would share the exact same MAC address and clock seed, causing their hopping sequences to collide entirely, destroying the separate networks.
     - **Allowed Configurations:**
         - Client / Client Bridge: A device can be a client in Piconet A and a client in Piconet B
