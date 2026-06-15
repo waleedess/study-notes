@@ -174,11 +174,11 @@ Ratios:
 - Ternary Relationships will have their ratios put as 3 binary relationships 
 ex. : 
 Emp (M)---(M) | (M) --- (M) Proj
-                            |
-                          (M)
-                            |
-                          (M)
-                         Skill
+            |
+              (M)
+            |
+	          (M)
+             Skill
 → On each Binary relationship side the ratio must me the same
 if i cant → divide that Entity and make loops
 
