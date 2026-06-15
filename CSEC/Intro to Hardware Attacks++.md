@@ -269,3 +269,19 @@ A Bluetooth MitM attack occurs when an attacker **secretly inserts themselves be
 		   - Replay previously captured packets
 	4. **Staying Hidden**: Forwarding all data normally so neither device detects disruption, keeping the attack invisible indefinitely.
 
+- **Impact**:
+	- Social engineering amplifies technical exploits as users accept pairing prompts without scrutiny
+	- Modern stacks must remain backward compatible with older, weaker protocols
+	- Signal strength variations may be too subtle to notice
+	- Most devices don't log Bluetooth traffic for user inspection and has no built-in anomaly detection
+	
+	1. **Data Theft & Credential Harvesting**: 
+		   - Intercepting keystrokes from Bluetooth keyboards (capturing passwords, PINs)
+		   - Reading messages sent 
+		   - Extracting health data from wearables
+		   - Harvesting encryption keys during weak pairing exchanges
+	2. **Command Injection**:
+		   - Sending unauthorized commands to Bluetooth-controlled locks or access systems
+		   - Manipulating industrial sensor readings
+		   - Injecting false GPS data into navigation systems
+	3. **Persistence**: As the ==Pairing== is a one-time event, once trusted it is rarely re-verify
