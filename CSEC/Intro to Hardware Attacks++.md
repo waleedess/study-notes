@@ -211,3 +211,8 @@ exchanged between the counterparts of the communication.
 		
 			[[https://www.allaboutcircuits.com/technical-articles/introduction-to-can-controller-area-network/]] 
 
+---
+
+#### Bluesmacking & Denial of Service
+
+Bluesmacking is a technique to DoS a Bluetooth device, it is possible by flooding the device with big L2CAP payloads.
