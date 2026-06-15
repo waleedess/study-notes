@@ -263,8 +263,9 @@ A Bluetooth MitM attack occurs when an attacker **secretly inserts themselves be
 		   - The attacker presents themselves to Device A as **Device B**
 		   - Simultaneously presents themselves to Device B as **Device A**
 	3. **Relay & Manipulation**: 
-		   - Read plaintext or weakly encrypted data
+		   - Read plain text or weakly encrypted data
 		   - Modify packets before forwarding them
 		   - Inject entirely new commands or data
 		   - Replay previously captured packets
-	4. **Staying Hidden**
+	4. **Staying Hidden**: Forwarding all data normally so neither device detects disruption, keeping the attack invisible indefinitely.
+
