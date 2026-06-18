@@ -29,13 +29,13 @@
 
 ###### versions
 
-| Version | Windows Version | Port              | Notes                                                           |
-| ------- | --------------- | ----------------- | --------------------------------------------------------------- |
-| SMBv1   |                 | T: 139 of NetBIOS | - Responsible for the 2 massive attacks: Eternal Blue, WannaCry |
-| SMBv2   | Visita          | T: 445            |                                                                 |
-| SMBv2.1 | 7               | T: 445            |                                                                 |
-| SMBv3   | 8               | T: 445            |                                                                 |
-| SMBv3.1 | 10              | T: 445            |                                                                 |
+| Version | Windows Version | Port              | OSI Layers                                                                                     | TCP Layers | Notes                                                           |
+| ------- | --------------- | ----------------- | ---------------------------------------------------------------------------------------------- | ---------- | --------------------------------------------------------------- |
+| SMBv1   |                 | T: 139 of NetBIOS | 7: SMB<br>->6: NetBIOS Session Service<br>>5: NetBIOS Session Service                          | 4          | - Responsible for the 2 massive attacks: Eternal Blue, WannaCry |
+| SMBv2   | Visita          | T: 445            | 7->4<br>- Hands requests straight down to TCP Layer, **Completely Skipping** the middle layers | 4,3        |                                                                 |
+| SMBv2.1 | 7               | T: 445            | 7->4<br>- Hands requests straight down to TCP Layer, **Completely Skipping** the middle layers | 4,3        |                                                                 |
+| SMBv3   | 8               | T: 445            | 7->4<br>- Hands requests straight down to TCP Layer, **Completely Skipping** the middle layers | 4,3        |                                                                 |
+| SMBv3.1 | 10              | T: 445            | 7->4<br>- Hands requests straight down to TCP Layer, **Completely Skipping** the middle layers | 4,3        |                                                                 |
 
 
 
