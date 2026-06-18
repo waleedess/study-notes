@@ -8,6 +8,7 @@
 #### NetBIOS: Network Basic Input/Output System
 
 - Allows applications on separate computers to communicate and share resources within a LAN. 
+- Designed fundemntally as Peer-to-Peer
 - Operating Primarily at the **Session Layer of OSI** = **Application Layer of TCP/IP** -> NBT *NetBIOS over TCP/IP*
 - Superseded by more **secure & scalable** protocols like DNS & SMB
   
@@ -21,7 +22,22 @@
 - **All of its ports and usages are considered as high-risk legacy protocols**
   
 ---
-#### SMB
+#### SMB: Server Message Block
+
+- Enabling applications on a computer to **Read/Write** to files, also request services from server programs in the network 
+- Client-Server Communication
+
+###### versions
+
+| Version | Windows Version | Port              | Notes                                                           |
+| ------- | --------------- | ----------------- | --------------------------------------------------------------- |
+| SMBv1   |                 | T: 139 of NetBIOS | - Responsible for the 2 massive attacks: Eternal Blue, WannaCry |
+| SMBv2   | Visita          | T: 445            |                                                                 |
+| SMBv2.1 | 7               | T: 445            |                                                                 |
+| SMBv3   | 8               | T: 445            |                                                                 |
+| SMBv3.1 | 10              | T: 445            |                                                                 |
+
+
 
 ---
 #### RPC
