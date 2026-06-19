@@ -42,10 +42,19 @@
 ---
 #### RPC: Remote Procedure Call
 
-- Allows programs to execute a subroutine or procedure on another computer over network as if it was a local function call
+- Allows programs to **execute** a subroutine or procedure on another computer over network as if it was a local function call
 - Client-Server Inter-Process Communication
   
-  
+###### Ports and Usages
+
+| Port                                        | Name                                            | OSI Layers                                          | TCP/IP Layers | Usage                                                                                                                                                                     |
+| ------------------------------------------- | -------------------------------------- | --------------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| T/U: 135                                    | R                                               | Layer 5: Session                                    | 4             | - Registers, tracks and looks up endpoints<br>- Handle initial handshake client -> server                                                                                 |
+| T/U: 49152 – 65535 Dynamic RPC Workers / Ephemeral Ports  ts  ts  ts  ts  ts  ts  ts  ts  ts  | Layer 4: Transport<br>(*Carrying Layer 7 payloads*) | 3             | - Actual data transmission and function execution                                                                                                                         |
+| T: 445                                                                                        | Layer 7: Application                                | 4             | - Relies on SMB to handle application-layer authentication and transport encapsulation                                                                                    |
+| T: 80/443                                      | M  dern  RPC<  r>(g  PC /  RPC   ver   TTP)  | Layer 7: Application<br>Layer 6: Presentation       | 4             | - Payloads serialized using (JSOM or Protocol Buffers) and sent natively inside HTTP/S application streams<br>- Serialization/NDR Network Data Representation are Layer 6 |
+- **Due to RPC's dynamic nature it is difficult to firewall due to Dynamic worker ephemeral ports** -> To have some security force RPC to use tightly controlled, static range of ports and restrict the port 135 **TCP & UDP**
+
 ---
 #### LDAP
 
