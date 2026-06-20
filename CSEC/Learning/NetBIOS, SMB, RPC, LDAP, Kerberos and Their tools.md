@@ -65,10 +65,12 @@
 
 ###### Ports and Usages
 
-| Port     | Name                           | OSI Layers | TCP/IP Layers | Usage                                                                     | Notes                                                                                                               |
-| -------- | ------------------------------ | ---------- | ------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------- |
-| T/U: 389 | Standard LDAP                  |            |               | - Standard directory queries, modifications, and authentication requests. | - **Cleartext** *(unencrypted)* by default<br>- Frequently upgraded to an encrypted TLS session using **StartTLS**. |
-| T: 636   | LDAPS<br>*(LDAP over SSL/TLS)* |            |               |                                                                           |                                                                                                                     |
+| Port     | Name                           | OSI Layers            | TCP/IP Layers | Usage                                                                                                                                                  | Notes                                                                                                               |
+| -------- | ------------------------------ | --------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| T/U: 389 | Standard LDAP                  | Layer 7: Application  | 4             | - Standard directory queries, modifications, and authentication requests.                                                                              | - **Cleartext** *(unencrypted)* by default<br>- Frequently upgraded to an encrypted TLS session using **StartTLS**. |
+| T: 636   | LDAPS<br>*(LDAP over SSL/TLS)* | Layer 6: Presentation | 4             | - It serves the exact same purpose as port 389 (searching, binding, altering directory objects), but it mandates encryption from the very first packet |                                                                                                                     |
+| T: 3268  | Global Catalog LDAP            | Layer 7: Application  | 4             | - Used to query the Global Catalog with Active Directory                                                                                               |                                                                                                                     |
+| T: 3269  | Global Catalog LDAPS           | Layer 6: Presentation | 4             | - Used to query the Global Catalog with Active Directory                                                                                               |                                                                                                                     |
 
 
 ---
